@@ -23,9 +23,11 @@ Scenario: 120,000 users over a 12-hour period log in, create a booking, and sear
 - ``` jmeter -n -t .\Booking.jmx -l .\Booking.jtl -e -o Reports ```
 
 ### Generated HTML report for Load Test -
+<img width="1098" height="585" alt="load test" src="https://github.com/user-attachments/assets/0e7b1f61-8895-4b3f-98eb-b4ad26d60948" />
 
 
 ### Generated HTML report for Stress Test -
+<img width="1105" height="595" alt="stress test" src="https://github.com/user-attachments/assets/ad253ec7-8c7e-4204-abf1-fb8850d9f710" />
 
 
 

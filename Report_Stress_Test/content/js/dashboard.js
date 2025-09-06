@@ -133,7 +133,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 88.28229027962716, "KoPercent": 11.717709720372836};
+    var data = {"OkPercent": 99.504, "KoPercent": 0.496};
     var dataset = [
         {
             "label" : "FAIL",
@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.2576564580559254, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.17330677290836655, 500, 1500, "Create Booking"], "isController": false}, {"data": [0.400390625, 500, 1500, "User Login"], "isController": false}, {"data": [0.19467213114754098, 500, 1500, "Search Booking"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.7359633333333333, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.90378, 500, 1500, "Create Booking"], "isController": false}, {"data": [0.4032, 500, 1500, "User Login"], "isController": false}, {"data": [0.90091, 500, 1500, "Search Booking"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 751, 88, 11.717709720372836, 9231.37150466045, 290, 77543, 4300.0, 19077.4, 20059.0, 30781.280000000046, 6.756392032675388, 6.425567582475664, 1.985544126842039], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Create Booking", 251, 42, 16.733067729083665, 13365.605577689237, 290, 20527, 16788.0, 19119.6, 20046.8, 20468.72, 2.3581138846872913, 2.256596010348456, 0.9355975376029914], "isController": false}, {"data": ["User Login", 256, 4, 1.5625, 3184.066406249999, 506, 77543, 1207.0, 2261.3000000000006, 5209.0999999999985, 76335.82, 2.3057869849133077, 1.7725368019590182, 0.6235398840351272], "isController": false}, {"data": ["Search Booking", 244, 42, 17.21311475409836, 11323.245901639348, 291, 32126, 16710.5, 19488.5, 20220.0, 22377.85000000003, 2.7398798495311887, 3.113102068244343, 0.5826367834484307], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 150000, 744, 0.496, 833.7457400000062, 285, 23118, 362.0, 1409.0, 1630.0, 2301.0, 123.82285736927608, 104.54708310623879, 36.4373635239944], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Create Booking", 50000, 319, 0.638, 534.9405599999976, 285, 7743, 325.0, 1911.0, 3678.800000000003, 5651.770000000037, 41.38459615669532, 37.16777981961903, 16.425259270615115], "isController": false}, {"data": ["User Login", 50000, 51, 0.102, 1420.398699999999, 1152, 23118, 1270.0, 1792.9000000000015, 2240.9500000000007, 4491.94000000001, 41.42381952470309, 31.21960446336477, 11.245919753776816], "isController": false}, {"data": ["Search Booking", 50000, 374, 0.748, 545.897960000009, 286, 10254, 333.0, 2166.800000000003, 3758.7500000000036, 5733.0, 41.38038338097594, 36.46496200737688, 8.873312798921544], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["503/Service Unavailable", 77, 87.5, 10.252996005326231], "isController": false}, {"data": ["Non HTTP response code: java.net.SocketException/Non HTTP response message: Socket closed", 2, 2.272727272727273, 0.2663115845539281], "isController": false}, {"data": ["404/Not Found", 9, 10.227272727272727, 1.1984021304926764], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["503/Service Unavailable", 597, 80.24193548387096, 0.398], "isController": false}, {"data": ["404/Not Found", 147, 19.758064516129032, 0.098], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 751, 88, "503/Service Unavailable", 77, "404/Not Found", 9, "Non HTTP response code: java.net.SocketException/Non HTTP response message: Socket closed", 2, "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["Create Booking", 251, 42, "503/Service Unavailable", 42, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["User Login", 256, 4, "503/Service Unavailable", 3, "Non HTTP response code: java.net.SocketException/Non HTTP response message: Socket closed", 1, "", "", "", "", "", ""], "isController": false}, {"data": ["Search Booking", 244, 42, "503/Service Unavailable", 32, "404/Not Found", 9, "Non HTTP response code: java.net.SocketException/Non HTTP response message: Socket closed", 1, "", "", "", ""], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 150000, 744, "503/Service Unavailable", 597, "404/Not Found", 147, "", "", "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["Create Booking", 50000, 319, "503/Service Unavailable", 319, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["User Login", 50000, 51, "503/Service Unavailable", 51, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["Search Booking", 50000, 374, "503/Service Unavailable", 227, "404/Not Found", 147, "", "", "", "", "", ""], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 
